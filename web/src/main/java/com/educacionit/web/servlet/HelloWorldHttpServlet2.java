@@ -22,6 +22,29 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloWorldHttpServlet2 extends HttpServlet{
 
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
+        
+        
+        PrintWriter out = resp.getWriter ();
+             
+        resp.setContentType ("text/html;charset=UTF-8");
+
+        
+            out.println ("<h2>password:"+req.getParameter("txtname") +"</h2>");
+       
+            out.println ("<h2>password:"+req.getParameter("txtpasword") +"</h2>");
+        
+            out.println ("<h4>POST</h4>");
+       
+            out.close();
+    
+      
+        
+    }
+    
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
 
